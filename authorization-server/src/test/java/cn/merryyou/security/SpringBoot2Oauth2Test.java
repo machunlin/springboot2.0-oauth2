@@ -53,6 +53,7 @@ public class SpringBoot2Oauth2Test {
 
     /**
      * 用户名密码登录
+     *
      * @throws Exception
      */
     @Test
@@ -104,6 +105,7 @@ public class SpringBoot2Oauth2Test {
         String auth = CLIENT_ID + ":" + CLIENT_SECRET;
         byte[] encodedAuth = Base64.encodeBase64(auth.getBytes());
         String authHeader = "Basic " + new String(encodedAuth);
+        System.out.println("--------------header authorization:" + authHeader);
         return authHeader;
     }
 }

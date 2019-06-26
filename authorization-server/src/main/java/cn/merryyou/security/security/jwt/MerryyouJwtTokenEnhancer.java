@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created on 2018/1/21 0021.
+ * 扩展返回的token信息。
  *
  * @author zlf
  * @email i@merryyou.cn
@@ -18,6 +18,7 @@ import java.util.Map;
 public class MerryyouJwtTokenEnhancer implements TokenEnhancer {
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
+        //扩展返回的token
         Map<String, Object> info = new HashMap<>();
         info.put("blog", "https://longfeizheng.github.io/");
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);

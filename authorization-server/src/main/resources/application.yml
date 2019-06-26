@@ -10,9 +10,12 @@ spring:
         max-wait: -1s
         min-idle: 0
         max-idle: 8
+    password: augo1024
+    database: 0
+
 logging:
   level:
-    org.springframework: debug
+    org.springframework: info
 merryyou:
   security:
     oauth2:

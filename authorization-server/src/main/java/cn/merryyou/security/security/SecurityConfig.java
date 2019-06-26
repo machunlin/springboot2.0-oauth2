@@ -36,5 +36,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .formLogin().and()
                 .httpBasic().and()
                 .csrf().disable();
+
+//        http.csrf().disable();
+//        http.requestMatchers()
+//                .antMatchers("/oauth/**","/login","/login-error")
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers("/oauth/**").authenticated()
+//                .and()
+//                .formLogin().loginPage( "/login" ).failureUrl( "/login-error" );
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
- * Created on 2018/1/17.
+ * 配置资源服务器
  *
  * @author zlf
  * @since 1.0
