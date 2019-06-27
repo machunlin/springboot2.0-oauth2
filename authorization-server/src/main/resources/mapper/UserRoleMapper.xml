@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.merryyou.security.mapper.UserRoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.merryyou.security.model.UserRole">
+        <id column="ID" property="id"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="ROLE_ID" property="roleId"/>
+        <result column="SCHOOL_ID" property="schoolId"/>
+        <result column="SCHOOL_CODE" property="schoolCode"/>
+        <result column="GRADE_ID" property="gradeId"/>
+        <result column="GRADE_CODE" property="gradeCode"/>
+        <result column="GRADE_NAME" property="gradeName"/>
+        <result column="CLASS_ID" property="classId"/>
+        <result column="CLASS_CODE" property="classCode"/>
+        <result column="CLASS_NAME" property="className"/>
+        <result column="SUBJECT_ID" property="subjectId"/>
+        <result column="SUBJECT_CODE" property="subjectCode"/>
+        <result column="SUBJECT_NAME" property="subjectName"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="STAGE_ID" property="stageId"/>
+        <result column="STAGE_CODE" property="stageCode"/>
+        <result column="STAGE_NAME" property="stageName"/>
+        <result column="STATUS" property="status"/>
+        <result column="CREATE_USER_ID" property="createUserId"/>
+        <result column="UPDATE_USER_ID" property="updateUserId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS id, USER_ID AS userId, ROLE_ID AS roleId, SCHOOL_ID AS schoolId, SCHOOL_CODE AS schoolCode, GRADE_ID AS gradeId, GRADE_CODE AS gradeCode, GRADE_NAME AS gradeName, CLASS_ID AS classId, CLASS_CODE AS classCode, CLASS_NAME AS className, SUBJECT_ID AS subjectId, SUBJECT_CODE AS subjectCode, SUBJECT_NAME AS subjectName, CREATE_TIME AS createTime, UPDATE_TIME AS updateTime, STAGE_ID AS stageId, STAGE_CODE AS stageCode, STAGE_NAME AS stageName, STATUS AS status, CREATE_USER_ID AS createUserId, UPDATE_USER_ID AS updateUserId
+    </sql>
+    <!-- 通用别名结果列 -->
+    <sql id="Alias_Column_List">
+        a.ID AS id,
+        a.USER_ID AS userId,
+        a.ROLE_ID AS roleId,
+        a.SCHOOL_ID AS schoolId,
+        a.SCHOOL_CODE AS schoolCode,
+        a.GRADE_ID AS gradeId,
+        a.GRADE_CODE AS gradeCode,
+        a.GRADE_NAME AS gradeName,
+        a.CLASS_ID AS classId,
+        a.CLASS_CODE AS classCode,
+        a.CLASS_NAME AS className,
+        a.SUBJECT_ID AS subjectId,
+        a.SUBJECT_CODE AS subjectCode,
+        a.SUBJECT_NAME AS subjectName,
+        a.CREATE_TIME AS createTime,
+        a.UPDATE_TIME AS updateTime,
+        a.STAGE_ID AS stageId,
+        a.STAGE_CODE AS stageCode,
+        a.STAGE_NAME AS stageName,
+        a.STATUS AS status,
+        a.CREATE_USER_ID AS createUserId,
+        a.UPDATE_USER_ID AS updateUserId,
+    </sql>
+</mapper>

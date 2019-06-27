@@ -24,11 +24,11 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class SpringBoot2Oauth2Test {
     //端口
-    final static long PORT = 8888;
+    final static long PORT = 8086;
     //clientId
     final static String CLIENT_ID = "merryyou";
     //clientSecret
-    final static String CLIENT_SECRET = "merryyou";
+    final static String CLIENT_SECRET = "order123";
     //用户名
     final static String USERNAME = "admin";
     //密码
@@ -101,11 +101,15 @@ public class SpringBoot2Oauth2Test {
      *
      * @return
      */
-    private String getBasicAuthHeader() {
+    private static String getBasicAuthHeader() {
         String auth = CLIENT_ID + ":" + CLIENT_SECRET;
         byte[] encodedAuth = Base64.encodeBase64(auth.getBytes());
         String authHeader = "Basic " + new String(encodedAuth);
         System.out.println("--------------header authorization:" + authHeader);
         return authHeader;
+    }
+
+    public static void main(String[] args) {
+        getBasicAuthHeader();
     }
 }

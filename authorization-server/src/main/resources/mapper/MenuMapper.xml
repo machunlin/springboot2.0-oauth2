@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="cn.merryyou.security.mapper.MenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.merryyou.security.model.Menu">
+        <id column="ID" property="id"/>
+        <result column="MENU_TYPE" property="menuType"/>
+        <result column="MODULE_NAME" property="moduleName"/>
+        <result column="MODULE_URL" property="moduleUrl"/>
+        <result column="MODULE_ICON" property="moduleIcon"/>
+        <result column="MODULE_ORDER" property="moduleOrder"/>
+        <result column="IS_SHOW" property="isShow"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="P_ID" property="pId"/>
+        <result column="LEVEL" property="level"/>
+        <result column="TYPE" property="type"/>
+        <result column="PLATFORM_ID" property="platformId"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="STATUS" property="status"/>
+        <result column="CREATE_USER_ID" property="createUserId"/>
+        <result column="UPDATE_USER_ID" property="updateUserId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS id, MENU_TYPE AS menuType, MODULE_NAME AS moduleName, MODULE_URL AS moduleUrl, MODULE_ICON AS moduleIcon, MODULE_ORDER AS moduleOrder, IS_SHOW AS isShow, DESCRIPTION AS description, P_ID AS pId, LEVEL AS level, TYPE AS type, PLATFORM_ID AS platformId, CREATE_TIME AS createTime, UPDATE_TIME AS updateTime, STATUS AS status, CREATE_USER_ID AS createUserId, UPDATE_USER_ID AS updateUserId
+    </sql>
+    <!-- 通用别名结果列 -->
+    <sql id="Alias_Column_List">
+        a.ID AS id,
+        a.MENU_TYPE AS menuType,
+        a.MODULE_NAME AS moduleName,
+        a.MODULE_URL AS moduleUrl,
+        a.MODULE_ICON AS moduleIcon,
+        a.MODULE_ORDER AS moduleOrder,
+        a.IS_SHOW AS isShow,
+        a.DESCRIPTION AS description,
+        a.P_ID AS pId,
+        a.LEVEL AS level,
+        a.TYPE AS type,
+        a.PLATFORM_ID AS platformId,
+        a.CREATE_TIME AS createTime,
+        a.UPDATE_TIME AS updateTime,
+        a.STATUS AS status,
+        a.CREATE_USER_ID AS createUserId,
+        a.UPDATE_USER_ID AS updateUserId,
+    </sql>
+    <select id="queryByUserId" resultType="cn.merryyou.security.model.Menu">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        sys_menu
+        WHERE
+        id IN (
+        SELECT PERM_ID FROM sys_role_menu rm
+        WHERE
+        rm.ROLE_ID IN (
+        SELECT id FROM sys_user_role AS ur
+        WHERE ur.USER_ID = 1
+        AND ur.type = 1
+        AND ur. STATUS !=- 1
+        )
+        )
+        AND type = 1
+        AND STATUS != - 1;
+    </select>
+
+</mapper>

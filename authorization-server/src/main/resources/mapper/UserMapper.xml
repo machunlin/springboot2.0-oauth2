@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.merryyou.security.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.merryyou.security.model.User">
+        <id column="ID" property="id"/>
+        <result column="CODE" property="code"/>
+        <result column="ACCOUNT" property="account"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="DEPART_ID" property="departId"/>
+        <result column="DEPART_CODE" property="departCode"/>
+        <result column="DEPART_NAME" property="departName"/>
+        <result column="NAME" property="name"/>
+        <result column="SEX" property="sex"/>
+        <result column="PHONE" property="phone"/>
+        <result column="MAIL" property="mail"/>
+        <result column="BIRTHDAY" property="birthday"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="LAST_TIME" property="lastTime"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="STATUS" property="status"/>
+        <result column="CREATE_USER_ID" property="createUserId"/>
+        <result column="UPDATE_USER_ID" property="updateUserId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS id, CODE AS code, ACCOUNT AS account, PASSWORD AS password, DEPART_ID AS departId, DEPART_CODE AS departCode, DEPART_NAME AS departName, NAME AS name, SEX AS sex, PHONE AS phone, MAIL AS mail, BIRTHDAY AS birthday, ADDRESS AS address, LAST_TIME AS lastTime, CREATE_TIME AS createTime, UPDATE_TIME AS updateTime, STATUS AS status, CREATE_USER_ID AS createUserId, UPDATE_USER_ID AS updateUserId
+    </sql>
+    <!-- 通用别名结果列 -->
+    <sql id="Alias_Column_List">
+        a.ID AS id,
+        a.CODE AS code,
+        a.ACCOUNT AS account,
+        a.PASSWORD AS password,
+        a.DEPART_ID AS departId,
+        a.DEPART_CODE AS departCode,
+        a.DEPART_NAME AS departName,
+        a.NAME AS name,
+        a.SEX AS sex,
+        a.PHONE AS phone,
+        a.MAIL AS mail,
+        a.BIRTHDAY AS birthday,
+        a.ADDRESS AS address,
+        a.LAST_TIME AS lastTime,
+        a.CREATE_TIME AS createTime,
+        a.UPDATE_TIME AS updateTime,
+        a.STATUS AS status,
+        a.CREATE_USER_ID AS createUserId,
+        a.UPDATE_USER_ID AS updateUserId,
+    </sql>
+
+</mapper>

@@ -28,7 +28,9 @@ public class MerryyouResourceServerConfig extends ResourceServerConfigurerAdapte
         http.formLogin()
                 .successHandler(appLoginInSuccessHandler)//登录成功处理器
                 .and()
-                .authorizeRequests().anyRequest().authenticated().and()
+                .authorizeRequests().antMatchers("/test/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
                 .csrf().disable();
     }
 

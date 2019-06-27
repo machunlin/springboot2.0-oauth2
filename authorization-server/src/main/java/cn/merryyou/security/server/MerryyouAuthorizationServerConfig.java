@@ -100,6 +100,7 @@ public class MerryyouAuthorizationServerConfig extends AuthorizationServerConfig
                         .scopes("all");
             }
         }
+
     }
     /**
      * springSecurity 授权表达式，

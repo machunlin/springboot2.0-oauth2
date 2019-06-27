@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.merryyou.security.mapper.SchoolUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.merryyou.security.model.SchoolUser">
+        <id column="ID" property="id"/>
+        <result column="SCHOOL_ID" property="schoolId"/>
+        <result column="SCHOOL_NAME" property="schoolName"/>
+        <result column="SCHOOL_CODE" property="schoolCode"/>
+        <result column="CODE" property="code"/>
+        <result column="ACCOUNT" property="account"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="TYPE" property="type"/>
+        <result column="NAME" property="name"/>
+        <result column="SEX" property="sex"/>
+        <result column="PHONE" property="phone"/>
+        <result column="MAIL" property="mail"/>
+        <result column="STATUS" property="status"/>
+        <result column="JOBS_STATUS" property="jobsStatus"/>
+        <result column="BIRTHDAY" property="birthday"/>
+        <result column="ADDRESS" property="address"/>
+        <result column="LAST_DATE" property="lastDate"/>
+        <result column="REGION_ID" property="regionId"/>
+        <result column="JOB_RESUME" property="jobResume"/>
+        <result column="STUDY_RESUME" property="studyResume"/>
+        <result column="ENROLLED_TYPE" property="enrolledType"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="CREATE_USER_ID" property="createUserId"/>
+        <result column="UPDATE_USER_ID" property="updateUserId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS id, SCHOOL_ID AS schoolId, SCHOOL_NAME AS schoolName, SCHOOL_CODE AS schoolCode, CODE AS code, ACCOUNT AS account, PASSWORD AS password, TYPE AS type, NAME AS name, SEX AS sex, PHONE AS phone, MAIL AS mail, STATUS AS status, JOBS_STATUS AS jobsStatus, BIRTHDAY AS birthday, ADDRESS AS address, LAST_DATE AS lastDate, REGION_ID AS regionId, JOB_RESUME AS jobResume, STUDY_RESUME AS studyResume, ENROLLED_TYPE AS enrolledType, CREATE_TIME AS createTime, UPDATE_TIME AS updateTime, CREATE_USER_ID AS createUserId, UPDATE_USER_ID AS updateUserId
+    </sql>
+    <!-- 通用别名结果列 -->
+    <sql id="Alias_Column_List">
+        a.ID AS id,
+        a.SCHOOL_ID AS schoolId,
+        a.SCHOOL_NAME AS schoolName,
+        a.SCHOOL_CODE AS schoolCode,
+        a.CODE AS code,
+        a.ACCOUNT AS account,
+        a.PASSWORD AS password,
+        a.TYPE AS type,
+        a.NAME AS name,
+        a.SEX AS sex,
+        a.PHONE AS phone,
+        a.MAIL AS mail,
+        a.STATUS AS status,
+        a.JOBS_STATUS AS jobsStatus,
+        a.BIRTHDAY AS birthday,
+        a.ADDRESS AS address,
+        a.LAST_DATE AS lastDate,
+        a.REGION_ID AS regionId,
+        a.JOB_RESUME AS jobResume,
+        a.STUDY_RESUME AS studyResume,
+        a.ENROLLED_TYPE AS enrolledType,
+        a.CREATE_TIME AS createTime,
+        a.UPDATE_TIME AS updateTime,
+        a.CREATE_USER_ID AS createUserId,
+        a.UPDATE_USER_ID AS updateUserId,
+    </sql>
+
+    <select id="getByAccount" resultType="cn.merryyou.security.model.SchoolUser">
+        select
+        <include refid="Base_Column_List"/>
+        from school_user
+        where account = #{account}
+    </select>
+
+</mapper>
