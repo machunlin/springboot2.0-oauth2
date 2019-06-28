@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--suppress ALL -->
-<mapper namespace="cn.merryyou.security.mapper.MenuMapper">
+<mapper namespace="com.auge.security.mapper.MenuMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.merryyou.security.model.Menu">
+    <resultMap id="BaseResultMap" type="com.auge.security.model.Menu">
         <id column="ID" property="id"/>
         <result column="MENU_TYPE" property="menuType"/>
         <result column="MODULE_NAME" property="moduleName"/>
@@ -48,7 +48,7 @@
         a.CREATE_USER_ID AS createUserId,
         a.UPDATE_USER_ID AS updateUserId,
     </sql>
-    <select id="queryByUserId" resultType="cn.merryyou.security.model.Menu">
+    <select id="queryByUserId" resultType="com.auge.security.model.Menu">
         SELECT
         <include refid="Base_Column_List"/>
         FROM

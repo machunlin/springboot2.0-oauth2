@@ -58,14 +58,14 @@ logging:
   level:
     org.springframework: info
 
-merryyou:
+config:
   security:
     oauth2:
       storeType: jwt #或者jwt
       jwtSigningKey: merryyou
-      clients[0]:
-        clientId: merryyou
-        clientSecret: order123
-      clients[1]:
-              clientId: merryyou1
-              clientSecret: order123
+#      clients[0]:
+#        clientId: merryyou
+#        clientSecret: order123
+#      clients[1]:
+#              clientId: merryyou1
+#              clientSecret: order123
