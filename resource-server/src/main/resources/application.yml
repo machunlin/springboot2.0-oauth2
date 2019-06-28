@@ -1,11 +1,11 @@
-auth-server: http://localhost:8888 # sso-server地址
+auth-server: http://localhost:8086 # sso-server地址
 server:
-  port: 8889
+  port: 8085
 security:
   oauth2:
     client:
       client-id: merryyou
-      client-secret: merryyou
+      client-secret: order123
       user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
       access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
     resource:
@@ -15,4 +15,4 @@ security:
       token-info-uri: ${auth-server}/oauth/check_token
 logging:
   level:
-    org.springframework: debug
+    org.springframework: info

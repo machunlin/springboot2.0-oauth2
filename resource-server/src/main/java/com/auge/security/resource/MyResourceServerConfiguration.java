@@ -15,17 +15,18 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
  */
 @Configuration
 @EnableResourceServer
-public class MerryyouResourceServerConfiguration extends ResourceServerConfigurerAdapter {
+public class MyResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers("/**").authenticated().antMatchers(HttpMethod.GET, "/api")
+        http.csrf().disable().authorizeRequests().antMatchers("/**").authenticated()
+                .antMatchers(HttpMethod.GET, "/api")
                 // 拦截用户，必须具有所列权限
-                .hasAuthority("ROLE_USER");
+//                .hasAuthority("ROLE_USER");
+                .hasAnyAuthority("student", "ROLE_USER", "/student/list", "/student/add");
+        ;
     }
-
-
 
 
 }

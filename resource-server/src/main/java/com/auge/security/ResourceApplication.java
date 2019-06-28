@@ -18,14 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableGlobalMethodSecurity(prePostEnabled = true)//开启注解
-public class SpringBoot2Oauth2ResourceApplication extends ResourceServerConfigurerAdapter {
+public class ResourceApplication extends ResourceServerConfigurerAdapter {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBoot2Oauth2ResourceApplication.class, args);
+        SpringApplication.run(ResourceApplication.class, args);
     }
 
     @RequestMapping(value = "/api")
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
+    @PreAuthorize("hasAnyAuthority('student','/student/list','/student/add')")
     public String success() {
         return "SUCCESS";
     }

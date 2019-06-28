@@ -5,6 +5,7 @@ import com.auge.security.mapper.SchoolUserMapper;
 import com.auge.security.model.Menu;
 import com.auge.security.model.SchoolUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -44,7 +45,7 @@ public class MyUserDetailsService implements UserDetailsService {
         validateSchoolUser(user);
 
         List<Menu> menus = menuMapper.queryByUserId(user.getId(), user.getType());
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        List<GrantedAuthority> authorities = new ArrayList<>();
         for (Menu menu : menus) {
             if (null == menu.getId() || StringUtils.isEmpty(menu.getModuleUrl())) {
                 continue;
